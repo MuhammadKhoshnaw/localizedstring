@@ -116,27 +116,27 @@ class RankViewModel : ViewModel() {
     )
 
     companion object {
-        private val RANK_0_RANGE = 0..1
-        private val RANK_1_RANGE = 2..3
-        private val RANK_2_RANGE = 4..5
-        private val RANK_3_RANGE = 6..7
-        private val RANK_4_RANGE = 8..9
-        private val RANK_5_RANGE = 10..11
-        private val RANK_6_RANGE = 12..13
-        private val RANK_7_RANGE = 14..15
-        private val RANK_8_RANGE = 16..17
-        private val RANK_9_RANGE = 18..Int.MAX_VALUE
+        /*        private val RANK_0_RANGE = 0..1
+                private val RANK_1_RANGE = 2..3
+                private val RANK_2_RANGE = 4..5
+                private val RANK_3_RANGE = 6..7
+                private val RANK_4_RANGE = 8..9
+                private val RANK_5_RANGE = 10..11
+                private val RANK_6_RANGE = 12..13
+                private val RANK_7_RANGE = 14..15
+                private val RANK_8_RANGE = 16..17
+                private val RANK_9_RANGE = 18..Int.MAX_VALUE*/
 
-        /*   private val RANK_0_RANGE = 0..9
-           private val RANK_1_RANGE = 10..24
-           private val RANK_2_RANGE = 25..49
-           private val RANK_3_RANGE = 50..84
-           private val RANK_4_RANGE = 85..129
-           private val RANK_5_RANGE = 130..184
-           private val RANK_6_RANGE = 185..249
-           private val RANK_7_RANGE = 250..324
-           private val RANK_8_RANGE = 325..409
-           private val RANK_9_RANGE = 410..Int.MAX_VALUE*/
+        private val RANK_0_RANGE = 0..9
+        private val RANK_1_RANGE = 10..19
+        private val RANK_2_RANGE = 20..34
+        private val RANK_3_RANGE = 35..54
+        private val RANK_4_RANGE = 55..79
+        private val RANK_5_RANGE = 80..109
+        private val RANK_6_RANGE = 110..144
+        private val RANK_7_RANGE = 145..184
+        private val RANK_8_RANGE = 185..229
+        private val RANK_9_RANGE = 230..Int.MAX_VALUE
     }
 }
 
