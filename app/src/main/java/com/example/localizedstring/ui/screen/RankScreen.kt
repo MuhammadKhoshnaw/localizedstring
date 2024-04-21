@@ -1,6 +1,5 @@
 package com.example.localizedstring.ui.screen
 
-import android.widget.Space
 import androidx.annotation.DrawableRes
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.Crossfade
@@ -39,7 +38,6 @@ import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.painter.ColorPainter
 import androidx.compose.ui.res.painterResource
@@ -222,7 +220,6 @@ private fun Actions(
             modifier = Modifier.padding(vertical = 8.dp)
         )
 
-
         AnimatedContent(
             modifier = Modifier
                 .padding(vertical = 8.dp)
@@ -232,6 +229,8 @@ private fun Actions(
         ) { action ->
             when (action) {
                 RankActions.COUNT_CLICKS -> FloatingActionButton(
+                    modifier = Modifier
+                        .padding(top = 8.dp),
                     onClick = onCountClicked,
                 ) {
                     Icon(
@@ -293,25 +292,12 @@ private fun Actions(
 }
 
 @Preview(showBackground = true)
-//@Preview(showBackground = true, device = "id:Nexus One")
 @Composable
 private fun Preview() {
     LocalizedStringTheme {
         RankScreen(
             title = localizedRowString("Current Level : Apprentice \uD83D\uDC76"),
-            body = localizedRowString(
-                "Click to increase your level!, you have clicked 0 times." +
-                        " You are currently an Apprentice. Click to become a Master!" +
-                        " You are currently an Apprentice. Click to become a Master!" +
-                        " You are currently an Apprentice. Click to become a Master!" +
-                        " You are currently an Apprentice. Click to become a Master!" +
-                        " You are currently an Apprentice. Click to become a Master!" +
-                        " You are currently an Apprentice. Click to become a Master!" +
-                        " You are currently an Apprentice. Click to become a Master!" +
-                        " You are currently an Apprentice. Click to become a Master!" +
-                        " You are currently an Apprentice. Click to become a Master!"
-
-            ),
+            body = localizedRowString("Click to increase your level!, you have clicked 0 times."),
             avatar = R.drawable.rank_0,
             rankActions = RankActions.COUNT_CLICKS,
             onCountClicked = { }
