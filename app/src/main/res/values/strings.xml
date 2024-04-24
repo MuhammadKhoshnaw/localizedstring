@@ -5,6 +5,12 @@
     <string name="rank_body">Ready to level up? Each click gets you closer to greatness! You\'ve clicked %s times and counting. Keep clicking and watch your power grow!</string>
     <string name="last_rank_body">As an Ascendant Being, you wield unimaginable power over the cosmos. It\'s time to make a choice: Do you wish to Reset Existence and start anew, or Forge a New Reality and shape the future? The fate of the universe lies in your hands.</string>
 
+    <string name="forge_a_new_universe_message_result_success">You have conjured forth a new realm in a mere %s milliseconds, yet alas, the effort has drained all your mystical energies. Now, you must embark on your journey anew, starting from the very beginning.</string>
+    <string name="forge_a_new_universe_message_result_failed">Your attempt to forge a new universe has faltered</string>
+
+    <string name="reset_existence_message_result_success">In a daring feat, you obliterated your universe in %s, yet the creation of a new one drained you entirely. Now, bereft of your arcane might, you must begin anew, a humble seeker in the vast expanse of possibilities.</string>
+    <string name="reset_existence_message_result_failed">Despite your efforts, the cosmos resists your command.</string>
+
     <string name="rank_0">Apprentice 👶</string>
     <string name="rank_1">Adventurer ⚔️</string>
     <string name="rank_2">Hero 🦸‍♂️</string>

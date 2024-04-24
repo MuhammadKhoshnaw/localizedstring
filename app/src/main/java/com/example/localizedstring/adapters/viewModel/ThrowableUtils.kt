@@ -1,4 +1,4 @@
-package com.example.localizedstring.viewModel
+package com.example.localizedstring.adapters.viewModel
 
 import com.example.localizedstring.entity.empty
 import timber.log.Timber

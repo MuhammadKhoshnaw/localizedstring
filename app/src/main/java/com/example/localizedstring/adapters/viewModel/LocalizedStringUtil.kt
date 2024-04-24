@@ -1,6 +1,6 @@
 @file:Suppress("UnusedReceiverParameter")
 
-package com.example.localizedstring.viewModel
+package com.example.localizedstring.adapters.viewModel
 
 import android.app.Activity
 import android.content.Context
@@ -29,8 +29,8 @@ fun LocalizedIntId.string(context: Context): String {
 fun LocalizedStringId.string(): String = string(LocalContext.current)
 
 // TODO: User your third party library to get the string if you have one
-@Suppress("UNUSED_PARAMETER", "UnusedReceiverParameter")
-fun LocalizedStringId.string(context: Context): String = "String id note implemented yet!"
+@Suppress("UnusedReceiverParameter")
+fun LocalizedStringId.string(context: Context): String = context.getStringResourceByName(id)
 
 fun LocalizedRawString.string(): String = string
 

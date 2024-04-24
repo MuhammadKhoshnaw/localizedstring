@@ -1,4 +1,4 @@
-package com.example.localizedstring.ui.screen
+package com.example.localizedstring.framework.ui.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -16,7 +16,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.localizedstring.R
-import com.example.localizedstring.ui.theme.LocalizedStringTheme
+import com.example.localizedstring.framework.ui.theme.LocalizedStringTheme
 
 
 @Composable

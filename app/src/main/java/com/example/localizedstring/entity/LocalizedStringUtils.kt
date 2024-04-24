@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.example.localizedstring.entity
 
 fun localizedString(
@@ -6,8 +8,18 @@ fun localizedString(
 ): LocalizedString = LocalizedIntId(id = id, args.toList())
 
 fun localizedString(
+    id: Int,
+    args: List<Any>,
+): LocalizedString = LocalizedIntId(id = id, args.toList())
+
+fun localizedString(
     id: String,
     vararg args: Any
+): LocalizedString = LocalizedStringId(id = id, args.toList())
+
+fun localizedString(
+    id: String,
+    args: List<Any>
 ): LocalizedString = LocalizedStringId(id = id, args.toList())
 
 fun localizedRowString(

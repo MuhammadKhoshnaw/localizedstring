@@ -1,4 +1,6 @@
-package com.example.localizedstring.ui.theme
+@file:Suppress("unused")
+
+package com.example.localizedstring.framework.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

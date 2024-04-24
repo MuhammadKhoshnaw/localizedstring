@@ -1,4 +1,4 @@
-package com.example.localizedstring.ui.screen
+package com.example.localizedstring.framework.ui.screen
 
 import androidx.annotation.DrawableRes
 import androidx.compose.animation.AnimatedContent
@@ -13,12 +13,14 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Done
 import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -43,21 +45,28 @@ import androidx.compose.ui.graphics.painter.ColorPainter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.localizedstring.R
+import com.example.localizedstring.adapters.viewModel.RankActions
+import com.example.localizedstring.adapters.viewModel.RankViewModel
+import com.example.localizedstring.adapters.viewModel.string
 import com.example.localizedstring.entity.LocalizedString
 import com.example.localizedstring.entity.localizedRowString
-import com.example.localizedstring.ui.theme.LocalizedStringTheme
-import com.example.localizedstring.viewModel.RankActions
-import com.example.localizedstring.viewModel.RankViewModel
-import com.example.localizedstring.viewModel.string
+import com.example.localizedstring.framework.ui.theme.LocalizedStringTheme
 import kotlinx.coroutines.delay
 import kotlin.math.abs
 
+// TODO: implement universe decision logic upload some data to a fake
+//  BE and use localisedString to get the response
+
+// TODO: the response will be in string then implement that string id in the project
+
+// TODO: implement the animation and logic to reset the app after the universe decision
+
 @Composable
 fun RankScreen(
-    viewModel: RankViewModel = viewModel(),
+    viewModel: RankViewModel = hiltViewModel(),
 ) {
     val uiState = viewModel.uiState.collectAsStateWithLifecycle()
 
@@ -67,6 +76,10 @@ fun RankScreen(
         avatar = uiState.value.avatar,
         rankActions = uiState.value.actions,
         onCountClicked = viewModel::onCountClicked,
+        onResetExistence = viewModel::onResetExistence,
+        onForgeNewReality = viewModel::onForgeNewReality,
+        onTryAgain = viewModel::onTryAgain,
+        onOk = viewModel::onOk,
     )
 }
 
@@ -77,6 +90,10 @@ fun RankScreen(
     @DrawableRes avatar: Int?,
     rankActions: RankActions,
     onCountClicked: () -> Unit,
+    onResetExistence: () -> Unit,
+    onForgeNewReality: () -> Unit,
+    onTryAgain: () -> Unit,
+    onOk: () -> Unit,
 ) {
     Scaffold { innerPadding ->
 
@@ -125,6 +142,10 @@ fun RankScreen(
                     body = body,
                     rankActions = rankActions,
                     onCountClicked = onCountClicked,
+                    onResetExistence = onResetExistence,
+                    onForgeNewReality = onForgeNewReality,
+                    onTryAgain = onTryAgain,
+                    onOk = onOk,
                 )
             }
         }
@@ -166,26 +187,16 @@ private fun Actions(
     body: LocalizedString,
     rankActions: RankActions,
     onCountClicked: () -> Unit,
+    onResetExistence: () -> Unit,
+    onForgeNewReality: () -> Unit,
+    onTryAgain: () -> Unit,
+    onOk: () -> Unit,
 ) {
-    val topFade = Brush.verticalGradient(
-        0f to Color.Transparent,
-        0.3f to Color.Black,
-    )
     Column(
         modifier = modifier
             .verticalScroll(rememberScrollState())
             .graphicsLayer { alpha = 0.99F }
             .drawWithContent {
-                val colors = listOf(
-                    Color.Transparent,
-                    Color.Black,
-                    Color.Black,
-                    Color.Black,
-                    Color.Black,
-                    Color.Black,
-                    Color.Black,
-                    Color.Black,
-                )
                 drawContent()
                 drawRect(
                     brush = Brush.verticalGradient(
@@ -197,7 +208,7 @@ private fun Actions(
             },
 
         horizontalAlignment = Alignment.Start,
-        verticalArrangement = androidx.compose.foundation.layout.Arrangement.Bottom
+        verticalArrangement = androidx.compose.foundation.layout.Arrangement.Top
     ) {
 
         Spacer(modifier = Modifier.padding(vertical = 32.dp))
@@ -228,9 +239,9 @@ private fun Actions(
             label = "rankActions",
         ) { action ->
             when (action) {
-                RankActions.COUNT_CLICKS -> FloatingActionButton(
+                RankActions.CountClicks -> FloatingActionButton(
                     modifier = Modifier
-                        .padding(top = 8.dp),
+                        .padding(top = 32.dp),
                     onClick = onCountClicked,
                 ) {
                     Icon(
@@ -239,7 +250,7 @@ private fun Actions(
                     )
                 }
 
-                RankActions.UNIVERSE_DECISION -> Column(
+                RankActions.UniverseDecision -> Column(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 16.dp),
@@ -264,7 +275,7 @@ private fun Actions(
                             .fillMaxWidth()
                             .padding(vertical = 8.dp),
                         enabled = buttonsEnabled,
-                        onClick = { /*TODO*/ },
+                        onClick = onResetExistence,
                     ) {
                         Text(
                             text = if (buttonsEnabled) "Reset Existence"
@@ -277,13 +288,45 @@ private fun Actions(
                             .fillMaxWidth()
                             .padding(vertical = 8.dp),
                         enabled = buttonsEnabled,
-                        onClick = { /*TODO*/ }) {
+                        onClick = onForgeNewReality
+                    ) {
                         Text(
                             text = if (buttonsEnabled) "Forge a New Reality"
                             else "Forge a New Reality in $countDown",
                         )
                     }
                 }
+
+                RankActions.Loading -> {
+                    CircularProgressIndicator(
+                        modifier = Modifier.width(64.dp),
+                        color = MaterialTheme.colorScheme.secondary,
+                        trackColor = MaterialTheme.colorScheme.surfaceVariant,
+                    )
+                }
+
+                RankActions.Ok -> {
+                    Button(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 8.dp),
+                        onClick = onOk
+                    ) {
+                        Text(text = "Ok")
+                    }
+                }
+
+                RankActions.TryAgain -> {
+                    Button(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 8.dp),
+                        onClick = onTryAgain
+                    ) {
+                        Text(text = "Try Again")
+                    }
+                }
+
             }
         }
 
@@ -299,8 +342,12 @@ private fun Preview() {
             title = localizedRowString("Current Level : Apprentice \uD83D\uDC76"),
             body = localizedRowString("Click to increase your level!, you have clicked 0 times."),
             avatar = R.drawable.rank_0,
-            rankActions = RankActions.COUNT_CLICKS,
-            onCountClicked = { }
+            rankActions = RankActions.Loading,
+            onCountClicked = { },
+            onResetExistence = { },
+            onForgeNewReality = { },
+            onTryAgain = { },
+            onOk = { },
         )
     }
 }
