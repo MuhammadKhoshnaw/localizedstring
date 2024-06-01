@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LocalizedString</string>
+    <string name="app_name">Localized String</string>
 
     <string name="rank_title">Current Level : %s</string>
     <string name="rank_body">Ready to level up? Each click gets you closer to greatness! You\'ve clicked %s times and counting. Keep clicking and watch your power grow!</string>

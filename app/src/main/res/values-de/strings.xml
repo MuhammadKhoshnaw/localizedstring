@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Lokalisierte Zeichenkette</string>
+
+    <string name="rank_title">Aktuelles Level: %s</string>
+    <string name="rank_body">Bereit zum Aufsteigen? Jeder Klick bringt dich der Größe näher! Du hast %s Mal geklickt und es werden immer mehr. Klicke weiter und sieh, wie deine Macht wächst!</string>
+    <string name="last_rank_body">Als aufgestiegener Wesen besitzt du unvorstellbare Macht über das Universum. Es ist an der Zeit, eine Wahl zu treffen: Möchtest du die Existenz zurücksetzen und von vorne beginnen oder eine neue Realität erschaffen und die Zukunft gestalten? Das Schicksal des Universums liegt in deinen Händen.</string>
+
+    <string name="forge_a_new_universe_message_result_success">Du hast in nur %s Millisekunden ein neues Reich erschaffen, doch leider hat dich die Anstrengung all deiner mystischen Energien beraubt. Nun musst du deine Reise von vorne beginnen.</string>
+    <string name="forge_a_new_universe_message_result_failed">Dein Versuch, ein neues Universum zu erschaffen, ist gescheitert.</string>
+    <string name="forge_a_new_universe_in_progress">Ein neues Universum wird erschaffen, bitte warten, dies könnte einige Zeit in Anspruch nehmen…</string>
+
+    <string name="reset_existence_message_result_success">In einem gewagten Versuch hast du dein Universum in %s zerstört, doch die Erschaffung eines neuen hat dich völlig erschöpft. Nun, ohne deine arkane Macht, musst du von vorne beginnen, ein bescheidener Sucher in der Weite der Möglichkeiten.</string>
+    <string name="reset_existence_message_result_failed">Trotz deiner Bemühungen widersteht das Universum deinem Befehl.</string>
+    <string name="reset_existence_in_progress">Existenz wird zurückgesetzt, bitte warten, dies könnte einige Zeit in Anspruch nehmen…</string>
+
+    <string name="rank_0">Lehrling 👶</string>
+    <string name="rank_1">Abenteurer ⚔️</string>
+    <string name="rank_2">Held 🦸‍♂️</string>
+    <string name="rank_3">Ritter 🛡️</string>
+    <string name="rank_4">Champion 🏆</string>
+    <string name="rank_5">Kriegsherr ⚔️👑</string>
+    <string name="rank_6">Drachentöter 🐉⚔️</string>
+    <string name="rank_7">Erzmagier 🧙‍♂️</string>
+    <string name="rank_8">Halbgott 🌟</string>
+    <string name="rank_9">Aufgestiegenes Wesen 🌌</string>
+
+    <string name="reset_existence_button">Existenz zurücksetzen</string>
+    <string name="reset_existence_delay_button">Existenz zurücksetzen in %1$s</string>
+    <string name="forge_a_new_reality_button">Neue Realität erschaffen</string>
+    <string name="forge_a_new_reality_delay_button">Neue Realität erschaffen in %1$s</string>
+    <string name="ok">OK</string>
+    <string name="try_again">Noch einmal versuchen</string>
+
+</resources>

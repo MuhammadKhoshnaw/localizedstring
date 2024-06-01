@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">زنجیرەی بەرزکردنەوە</string>
+
+    <string name="rank_title">ئاستی ئێستا: %s</string>
+    <string name="rank_body">ئامادەی بەرز بوون؟ هەر کرتەیەک تۆ دەناسی نەزیکتر بەرز دەکات! تۆ کرتەی %s کردووە وە باشتر دەبێت. بەردەوام بەکرتەکردن و بینە چۆن هێزەکانت پەرەش دەکرێن!</string>
+    <string name="last_rank_body">وەک کەسی بەرزبوو، تۆ هێزی بێگمان دەبەزیتەوە لە کوێرەکە. کاتەکە بۆ بژاردەیەک هاتووە: دەتەوێت بوونی نوێ بکەیتەوە و لە سەرەوە دەستی پێبکەیت، یان ئاستەیەکی نوێ دروست بکەیت و داهاتوو دەشێنیت؟ ڕوونی دەستەیەک لە دەستی تۆیە.</string>
+
+    <string name="forge_a_new_universe_message_result_success">تۆ عەلیمێکی نوێ دروست کرد لە ماوەی %s میلی چرکە، بەڵام وای مەبێ، هەوڵەکە تۆ هەموو هێزەکانت خستنە شین. ئێستا، دەتەوێت بۆ سەرەتە دەستی پێبکەیت وەک بەرەوپێشچوون.</string>
+    <string name="forge_a_new_universe_message_result_failed">هەوڵەکەت بۆ دروستکردنی جیهانی نوێ سووتاوە.</string>
+    <string name="forge_a_new_universe_in_progress">دروستکردنی جیهانی نوێ، تکایە چاوەڕێ بکە، ئەمە کاتێک دەبێت…</string>
+
+    <string name="reset_existence_message_result_success">لە هەوڵێکی بەرز، تۆ بوونی خوەت لە ماوەی %s کێشە کرد، بەڵام دروستکردنی یەکێکی نوێ تۆ تێکدەدا. ئێستا، بێ هێزەکانت بەرەوپێشچوون دەستی پێبکە، وەک پەیوەندیدەرێکی سەرەتایی لەو بەرزەکە.</string>
+    <string name="reset_existence_message_result_failed">هەموو هەوڵەکانت هەرەمە دەدەستی دەرناکەوتەوە.</string>
+    <string name="reset_existence_in_progress">گەراندنی بوونی نوێ، تکایە چاوەڕێ بکە، ئەمە کاتێک دەبێت…</string>
+
+    <string name="rank_0">فێربووان 👶</string>
+    <string name="rank_1">ئەفسانەیەک ⚔️</string>
+    <string name="rank_2">پیاو 🦸‍♂️</string>
+    <string name="rank_3">شەهید 🛡️</string>
+    <string name="rank_4">پەیوەندیدەر 🏆</string>
+    <string name="rank_5">سەروک ⚔️👑</string>
+    <string name="rank_6">بەستەبارێکی ئاگرین 🐉⚔️</string>
+    <string name="rank_7">مێژوەیەک 🧙‍♂️</string>
+    <string name="rank_8">پولەکی 🏆</string>
+    <string name="rank_9">کەسی بەرزبوو 🌌</string>
+
+    <string name="reset_existence_button">بوونی نوێ بگەرەوە</string>
+    <string name="reset_existence_delay_button">بوونی نوێ بگەرەوە لە %1$s</string>
+    <string name="forge_a_new_reality_button">ڕاستیەکی نوێ دروست بکە</string>
+    <string name="forge_a_new_reality_delay_button">ڕاستیەکی نوێ دروست بکە لە %1$s</string>
+    <string name="ok">باشە</string>
+    <string name="try_again">دووبارە هەوڵدەوە</string>
+
+</resources>

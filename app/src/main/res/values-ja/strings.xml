@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">ローカライズされた文字列</string>
+
+    <string name="rank_title">現在のレベル : %s</string>
+    <string name="rank_body">レベルアップの準備はできましたか？ クリックするたびに偉大さに近づきます！ あなたはすでに %s 回クリックしました。クリックを続けて、あなたの力が成長するのを見てください！</string>
+    <string name="last_rank_body">上昇した存在として、あなたは宇宙に対して想像を絶する力を持っています。今、選択をする時が来ました：存在をリセットして新たに始めますか、それとも新しい現実を創り出して未来を形作りますか？ 宇宙の運命はあなたの手にかかっています。</string>
+
+    <string name="forge_a_new_universe_message_result_success">わずか %s ミリ秒で新しい領域を創造しましたが、残念ながらその努力はあなたの神秘的なエネルギーをすべて消耗させました。今、あなたは最初から旅を再開しなければなりません。</string>
+    <string name="forge_a_new_universe_message_result_failed">新しい宇宙を創る試みは失敗しました。</string>
+    <string name="forge_a_new_universe_in_progress">新しい宇宙を創造中です、お待ちください、時間がかかるかもしれません…</string>
+
+    <string name="reset_existence_message_result_success">大胆な偉業で、あなたは %s で宇宙を消滅させましたが、新しい宇宙の創造は完全にあなたを消耗させました。今、神秘的な力を失ったあなたは、無限の可能性の広大な宇宙で再び始めなければなりません。</string>
+    <string name="reset_existence_message_result_failed">あなたの努力にもかかわらず、宇宙はあなたの命令に抵抗します。</string>
+    <string name="reset_existence_in_progress">存在をリセット中です、お待ちください、時間がかかるかもしれません…</string>
+
+    <string name="rank_0">見習い 👶</string>
+    <string name="rank_1">冒険者 ⚔️</string>
+    <string name="rank_2">ヒーロー 🦸‍♂️</string>
+    <string name="rank_3">騎士 🛡️</string>
+    <string name="rank_4">チャンピオン 🏆</string>
+    <string name="rank_5">軍閥 ⚔️👑</string>
+    <string name="rank_6">ドラゴンスレイヤー 🐉⚔️</string>
+    <string name="rank_7">アークメイジ 🧙‍♂️</string>
+    <string name="rank_8">デミゴッド 🌟</string>
+    <string name="rank_9">上昇した存在 🌌</string>
+
+    <string name="reset_existence_button">存在をリセット</string>
+    <string name="reset_existence_delay_button">存在を %1$s でリセット</string>
+    <string name="forge_a_new_reality_button">新しい現実を創る</string>
+    <string name="forge_a_new_reality_delay_button">新しい現実を %1$s で創る</string>
+    <string name="ok">OK</string>
+    <string name="try_again">もう一度試してください</string>
+
+</resources>

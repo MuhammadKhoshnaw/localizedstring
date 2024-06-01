@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Chaîne localisée</string>
+
+    <string name="rank_title">Niveau actuel : %s</string>
+    <string name="rank_body">Prêt à monter de niveau ? Chaque clic vous rapproche de la grandeur ! Vous avez cliqué %s fois et ça continue. Continuez à cliquer et regardez votre pouvoir grandir !</string>
+    <string name="last_rank_body">En tant qu'être ascendant, vous possédez un pouvoir inimaginable sur le cosmos. Il est temps de faire un choix : souhaitez-vous réinitialiser l'existence et recommencer à zéro, ou forger une nouvelle réalité et façonner l'avenir ? Le destin de l'univers est entre vos mains.</string>
+
+    <string name="forge_a_new_universe_message_result_success">Vous avez créé un nouveau royaume en seulement %s millisecondes, mais hélas, l'effort a drainé toutes vos énergies mystiques. Maintenant, vous devez recommencer votre voyage depuis le début.</string>
+    <string name="forge_a_new_universe_message_result_failed">Votre tentative de forger un nouvel univers a échoué.</string>
+    <string name="forge_a_new_universe_in_progress">Création d'un nouvel univers, veuillez patienter, cela pourrait prendre un certain temps…</string>
+
+    <string name="reset_existence_message_result_success">Dans un exploit audacieux, vous avez détruit votre univers en %s, mais la création d'un nouveau vous a complètement épuisé. Maintenant, dépourvu de votre puissance mystique, vous devez recommencer à zéro, un humble chercheur dans l'immensité des possibilités.</string>
+    <string name="reset_existence_message_result_failed">Malgré vos efforts, le cosmos résiste à votre commande.</string>
+    <string name="reset_existence_in_progress">Réinitialisation de l'existence, veuillez patienter, cela pourrait prendre un certain temps…</string>
+
+    <string name="rank_0">Apprenti 👶</string>
+    <string name="rank_1">Aventurier ⚔️</string>
+    <string name="rank_2">Héros 🦸‍♂️</string>
+    <string name="rank_3">Chevalier 🛡️</string>
+    <string name="rank_4">Champion 🏆</string>
+    <string name="rank_5">Seigneur de guerre ⚔️👑</string>
+    <string name="rank_6">Tueur de dragons 🐉⚔️</string>
+    <string name="rank_7">Archimage 🧙‍♂️</string>
+    <string name="rank_8">Demi-dieu 🌟</string>
+    <string name="rank_9">Être ascendant 🌌</string>
+
+    <string name="reset_existence_button">Réinitialiser l'existence</string>
+    <string name="reset_existence_delay_button">Réinitialiser l'existence dans %1$s</string>
+    <string name="forge_a_new_reality_button">Forger une nouvelle réalité</string>
+    <string name="forge_a_new_reality_delay_button">Forger une nouvelle réalité dans %1$s</string>
+    <string name="ok">OK</string>
+    <string name="try_again">Réessayer</string>
+
+</resources>
