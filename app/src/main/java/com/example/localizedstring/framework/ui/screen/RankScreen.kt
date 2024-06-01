@@ -7,7 +7,6 @@ import androidx.compose.animation.core.AnimationConstants.DefaultDurationMillis
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -36,13 +35,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.drawWithContent
-import androidx.compose.ui.graphics.BlendMode
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.painter.ColorPainter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -54,15 +50,10 @@ import com.example.localizedstring.adapters.viewModel.string
 import com.example.localizedstring.entity.LocalizedString
 import com.example.localizedstring.entity.localizedRowString
 import com.example.localizedstring.framework.ui.theme.LocalizedStringTheme
+import com.example.localizedstring.framework.ui.util.fadingEdge
+import com.example.localizedstring.framework.ui.util.topFade
 import kotlinx.coroutines.delay
 import kotlin.math.abs
-
-// TODO: implement universe decision logic upload some data to a fake
-//  BE and use localisedString to get the response
-
-// TODO: the response will be in string then implement that string id in the project
-
-// TODO: implement the animation and logic to reset the app after the universe decision
 
 @Composable
 fun RankScreen(
@@ -133,25 +124,27 @@ fun RankScreen(
                         .weight(1.2f),
                 )
 
-                Actions(
+                Box(
                     modifier = Modifier
                         .fillMaxWidth()
                         .weight(weight = 1f, fill = true)
-                        .padding(horizontal = 16.dp),
-                    title = title,
-                    body = body,
-                    rankActions = rankActions,
-                    onCountClicked = onCountClicked,
-                    onResetExistence = onResetExistence,
-                    onForgeNewReality = onForgeNewReality,
-                    onTryAgain = onTryAgain,
-                    onOk = onOk,
-                )
+                        .padding(horizontal = 16.dp)
+                        .fadingEdge(topFade)
+                ) {
+                    Actions(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        title = title,
+                        body = body,
+                        rankActions = rankActions,
+                        onCountClicked = onCountClicked,
+                        onResetExistence = onResetExistence,
+                        onForgeNewReality = onForgeNewReality,
+                        onTryAgain = onTryAgain,
+                        onOk = onOk,
+                    )
+                }
             }
-        }
-
-        BoxWithConstraints {
-
         }
     }
 }
@@ -192,21 +185,10 @@ private fun Actions(
     onTryAgain: () -> Unit,
     onOk: () -> Unit,
 ) {
+
     Column(
         modifier = modifier
-            .verticalScroll(rememberScrollState())
-            .graphicsLayer { alpha = 0.99F }
-            .drawWithContent {
-                drawContent()
-                drawRect(
-                    brush = Brush.verticalGradient(
-                        0f to Color.Transparent,
-                        0f to Color.Black,
-                    ),
-                    blendMode = BlendMode.DstIn
-                )
-            },
-
+            .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.Start,
         verticalArrangement = androidx.compose.foundation.layout.Arrangement.Top
     ) {
@@ -278,8 +260,8 @@ private fun Actions(
                         onClick = onResetExistence,
                     ) {
                         Text(
-                            text = if (buttonsEnabled) "Reset Existence"
-                            else "Reset Existence in $countDown",
+                            text = if (buttonsEnabled) stringResource(R.string.reset_existence_button)
+                            else stringResource(R.string.reset_existence_delay_button, countDown),
                         )
                     }
 
@@ -291,15 +273,20 @@ private fun Actions(
                         onClick = onForgeNewReality
                     ) {
                         Text(
-                            text = if (buttonsEnabled) "Forge a New Reality"
-                            else "Forge a New Reality in $countDown",
+                            text = if (buttonsEnabled) stringResource(R.string.forge_a_new_reality_button)
+                            else stringResource(
+                                R.string.forge_a_new_reality_delay_button,
+                                countDown
+                            ),
                         )
                     }
                 }
 
                 RankActions.Loading -> {
                     CircularProgressIndicator(
-                        modifier = Modifier.width(64.dp),
+                        modifier = Modifier
+                            .padding(top = 32.dp)
+                            .width(64.dp),
                         color = MaterialTheme.colorScheme.secondary,
                         trackColor = MaterialTheme.colorScheme.surfaceVariant,
                     )
@@ -312,7 +299,7 @@ private fun Actions(
                             .padding(vertical = 8.dp),
                         onClick = onOk
                     ) {
-                        Text(text = "Ok")
+                        Text(text = stringResource(R.string.ok))
                     }
                 }
 
@@ -323,7 +310,7 @@ private fun Actions(
                             .padding(vertical = 8.dp),
                         onClick = onTryAgain
                     ) {
-                        Text(text = "Try Again")
+                        Text(text = stringResource(R.string.try_again))
                     }
                 }
 
@@ -342,7 +329,7 @@ private fun Preview() {
             title = localizedRowString("Current Level : Apprentice \uD83D\uDC76"),
             body = localizedRowString("Click to increase your level!, you have clicked 0 times."),
             avatar = R.drawable.rank_0,
-            rankActions = RankActions.Loading,
+            rankActions = RankActions.CountClicks,
             onCountClicked = { },
             onResetExistence = { },
             onForgeNewReality = { },

@@ -7,9 +7,11 @@
 
     <string name="forge_a_new_universe_message_result_success">You have conjured forth a new realm in a mere %s milliseconds, yet alas, the effort has drained all your mystical energies. Now, you must embark on your journey anew, starting from the very beginning.</string>
     <string name="forge_a_new_universe_message_result_failed">Your attempt to forge a new universe has faltered</string>
+    <string name="forge_a_new_universe_in_progress">Forging a new universe please wait this might take some time…</string>
 
     <string name="reset_existence_message_result_success">In a daring feat, you obliterated your universe in %s, yet the creation of a new one drained you entirely. Now, bereft of your arcane might, you must begin anew, a humble seeker in the vast expanse of possibilities.</string>
     <string name="reset_existence_message_result_failed">Despite your efforts, the cosmos resists your command.</string>
+    <string name="reset_existence_in_progress">Resetting existence please wait this might take some time…</string>
 
     <string name="rank_0">Apprentice 👶</string>
     <string name="rank_1">Adventurer ⚔️</string>
@@ -21,6 +23,13 @@
     <string name="rank_7">Archmage 🧙‍♂️</string>
     <string name="rank_8">Demigod 🌟</string>
     <string name="rank_9">Ascendant Being 🌌</string>
+
+    <string name="reset_existence_button">Reset Existence</string>
+    <string name="reset_existence_delay_button">Reset Existence in %1$s</string>
+    <string name="forge_a_new_reality_button">Forge a New Reality</string>
+    <string name="forge_a_new_reality_delay_button">Forge a New Reality in %1$s</string>
+    <string name="ok">OK</string>
+    <string name="try_again">Try Again</string>
 
 </resources>
 

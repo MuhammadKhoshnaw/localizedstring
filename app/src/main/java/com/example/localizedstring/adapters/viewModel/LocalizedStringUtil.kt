@@ -30,7 +30,8 @@ fun LocalizedStringId.string(): String = string(LocalContext.current)
 
 // TODO: User your third party library to get the string if you have one
 @Suppress("UnusedReceiverParameter")
-fun LocalizedStringId.string(context: Context): String = context.getStringResourceByName(id)
+fun LocalizedStringId.string(context: Context): String =
+    context.getStringResourceByName(id, *args.toTypedArray())
 
 fun LocalizedRawString.string(): String = string
 

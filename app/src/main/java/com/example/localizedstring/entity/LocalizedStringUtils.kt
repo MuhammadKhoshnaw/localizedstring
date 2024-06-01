@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package com.example.localizedstring.entity
 
 fun localizedString(

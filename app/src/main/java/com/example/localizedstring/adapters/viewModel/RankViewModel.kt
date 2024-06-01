@@ -1,6 +1,7 @@
 package com.example.localizedstring.adapters.viewModel
 
 import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.localizedstring.R
@@ -44,7 +45,7 @@ class RankViewModel @Inject constructor(
     fun onResetExistence() = viewModelScope.launch(Dispatchers.IO) {
         runCatching {
             Timber.i("trying to reset existence")
-            _uiState.update { it.copy(actions = RankActions.Loading) }
+            showLoading(R.string.reset_existence_in_progress)
             val result = universeDestinyUseCase.resetExistence()
             updateUiWith(result)
         }.onFailure {
@@ -55,7 +56,7 @@ class RankViewModel @Inject constructor(
     fun onForgeNewReality() = viewModelScope.launch(Dispatchers.IO) {
         runCatching {
             Timber.i("trying to forge new reality")
-            _uiState.update { it.copy(actions = RankActions.Loading) }
+            showLoading(R.string.forge_a_new_universe_in_progress)
             val result = universeDestinyUseCase.forgeANewUniverse()
             updateUiWith(result)
         }.onFailure {
@@ -65,12 +66,21 @@ class RankViewModel @Inject constructor(
 
     fun onTryAgain() {
         Timber.i("user clicked try again button")
-        _uiState.update { it.copy(actions = RankActions.UniverseDecision) }
+        updateRank()
     }
 
     fun onOk() {
         Timber.i("user clicked ok button")
         count = 0
+    }
+
+    private fun showLoading(
+        @StringRes body: Int
+    ) = _uiState.update {
+        it.copy(
+            body = localizedString(body),
+            actions = RankActions.Loading
+        )
     }
 
     private fun updateUiWith(result: UniverseDestinyResult) = _uiState.update {
@@ -175,7 +185,8 @@ class RankViewModel @Inject constructor(
     )
 
     companion object {
-        private val RANK_0_RANGE = 0..1
+        //if you wanna make it faster
+     /*   private val RANK_0_RANGE = 0..1
         private val RANK_1_RANGE = 2..3
         private val RANK_2_RANGE = 4..5
         private val RANK_3_RANGE = 6..7
@@ -185,8 +196,8 @@ class RankViewModel @Inject constructor(
         private val RANK_7_RANGE = 14..15
         private val RANK_8_RANGE = 16..17
         private val RANK_9_RANGE = 18..Int.MAX_VALUE
-
-        /*       private val RANK_0_RANGE = 0..9
+*/
+               private val RANK_0_RANGE = 0..9
                private val RANK_1_RANGE = 10..19
                private val RANK_2_RANGE = 20..34
                private val RANK_3_RANGE = 35..54
@@ -195,7 +206,7 @@ class RankViewModel @Inject constructor(
                private val RANK_6_RANGE = 110..144
                private val RANK_7_RANGE = 145..184
                private val RANK_8_RANGE = 185..229
-               private val RANK_9_RANGE = 230..Int.MAX_VALUE*/
+               private val RANK_9_RANGE = 230..Int.MAX_VALUE
     }
 }
 

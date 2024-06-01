@@ -41,7 +41,6 @@ fun Resources.string(@StringRes id: Int, vararg formatArgs: Any): String = runOr
     getString(id, *formatArgs)
 }
 
-
 private const val STRING_RESOURCE_TYPE = "string"
 
 @SuppressLint("DiscouragedApi")
